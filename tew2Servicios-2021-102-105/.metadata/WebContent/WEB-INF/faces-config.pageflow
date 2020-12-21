@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14468168361820" configfile="/Red_Social/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="672" y="82" id="pf14468173717861" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16036480520100 pf160412935311712 pf160413304114230 pf160413304114231 pf160413304114232 pf160413304114233 pf160413304114234 pf160413304114235 pf160413304114236 pf160413304114237 pf160421638021946 pf160421638021947 pf160433881385057 pf160433881385058" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="1188" y="276" id="pf14468173717864" referenceLink="//@navigationRule.4/@navigationCase.3/@toViewId|" outlinks="pf16040041980145 pf160421638021948 pf160421638021949 pf160421638021950" inlinks="pf16036480520100 pf16040041980145 pf160412935311712 pf160421638021946 pf160421638021947 pf160421641369856" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/crearPublicacion.xhtml" x="4" y="12" id="pf160413304114238" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf160413304114230" path="/usuarios/crearPublicacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/borrarUsuario.xhtml" x="1136" y="72" id="pf160413304114239" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf160413304114231 pf160413304114235" path="/admin/borrarUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/publicacionesPropias.xhtml" y="108" id="pf160413304114240" referenceLink="//@navigationRule.0/@navigationCase.7/@toViewId|" inlinks="pf160413304114232 pf160413304114233" path="/usuarios/publicacionesPropias.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/publicacionesAmigos.xhtml" x="-1" y="192" id="pf160413304114241" referenceLink="//@navigationRule.0/@navigationCase.8/@toViewId|" inlinks="pf160413304114234" path="/usuarios/publicacionesAmigos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/enviarInvitacion.xhtml" x="18" y="324" id="pf160413304114242" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf160413304114243" inlinks="pf160413304114236 pf160413304114243" path="/usuarios/enviarInvitacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/aceptarInvitacion.xhtml" x="312" y="312" id="pf160413304114244" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf160413304114245" inlinks="pf160413304114237 pf160413304114245" path="/usuarios/aceptarInvitacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/opcionesAdmin.xhtml" x="1377" y="480" id="pf160421638022052" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf160421638021948 pf160433881385159 pf160433881385160" path="/admin/opcionesAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/opcionesUsuarios.xhtml" x="660" y="468" id="pf160421638022053" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf160421638021949 pf160433881385058 pf160433881385161 pf160433881385162" path="/usuarios/opcionesUsuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="972" y="538" id="pf160421638022054" referenceLink="//@navigationRule.4/@navigationCase.4/@toViewId|" outlinks="pf160421641369856 pf160433881385159 pf160433881385161 pf160433881385163 pf160433881385164" inlinks="pf160421638021950 pf160433881385163 pf160433881385164" path="/opcionesRegistro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="error.xhtml" x="454" y="492" id="pf160433881385165" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf160433881385057" path="/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/*" x="348" y="636" id="pf160433881385166" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf160433881385162" path="/usuarios/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/*" x="1446" y="144" id="pf160433881385167" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf160433881385160" path="/admin/*"/>
+  <links id="pf16036480520100" target="pf14468173717864" source="pf14468173717861" outcome="login"/>
+  <links id="pf160412935311712" target="pf14468173717864" source="pf14468173717861" outcome="CIERRASESION"/>
+  <links id="pf160413304114230" target="pf160413304114238" source="pf14468173717861" outcome="publicar"/>
+  <links id="pf160413304114231" target="pf160413304114239" source="pf14468173717861" outcome="borrarUsers"/>
+  <links id="pf160413304114232" target="pf160413304114240" source="pf14468173717861" outcome="exito" fromaction="#{publicaciones.listadoPropias('TITULO')}"/>
+  <links id="pf160413304114233" target="pf160413304114240" source="pf14468173717861" outcome="exito" fromaction="#{publicaciones.listadoPropias('FECHA')}"/>
+  <links id="pf160413304114234" target="pf160413304114241" source="pf14468173717861" outcome="exito" fromaction="#{publicaciones.listadoAmigos}"/>
+  <links id="pf160413304114235" target="pf160413304114239" source="pf14468173717861" outcome="exito" fromaction="#{admin.borrarUsuarios}"/>
+  <links id="pf160413304114236" target="pf160413304114242" source="pf14468173717861" outcome="exito" fromaction="#{usuarios.listadoEnvios}"/>
+  <links id="pf160413304114237" target="pf160413304114244" source="pf14468173717861" outcome="exito" fromaction="#{usuarios.listadoPeticiones}"/>
+  <links id="pf160421638021946" target="pf14468173717864" source="pf14468173717861" outcome="success" fromaction="#{login.logout()}"/>
+  <links id="pf160421638021947" target="pf14468173717864" source="pf14468173717861" outcome="exito" fromaction="#{admin.reiniciarBD}"/>
+  <links id="pf160421638021948" target="pf160421638022052" source="pf14468173717864" outcome="successAdmin" fromaction="#{login.verify}"/>
+  <links id="pf160421638021949" target="pf160421638022053" source="pf14468173717864" outcome="successUsuarios" fromaction="#{login.verify}"/>
+  <links id="pf160421638021950" target="pf160421638022054" source="pf14468173717864" outcome="Registro"/>
+  <links id="pf160421641369856" target="pf14468173717864" source="pf160421638022054" outcome="IniciarSesion"/>
+  <links id="pf160433881385057" target="pf160433881385165" source="pf14468173717861" outcome="error"/>
+  <links id="pf160433881385058" target="pf160421638022053" source="pf14468173717861" outcome="exito" fromaction="#{publicaciones.salva}"/>
+  <links id="pf160433881385159" target="pf160421638022052" source="pf160421638022054" outcome="successAdmin" fromaction="#{login.registry}"/>
+  <links id="pf160433881385161" target="pf160421638022053" source="pf160421638022054" outcome="successUsuarios" fromaction="#{login.registry}"/>
+  <links id="pf160433881385162" target="pf160421638022053" source="pf160433881385166" outcome="casa"/>
+  <links id="pf160433881385160" target="pf160421638022052" source="pf160433881385167" outcome="casa"/>
+  <links id="pf16040041980145" target="pf14468173717864" source="pf14468173717864" outcome="login" fromaction="#{login.verify}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf160413304114245" target="pf160413304114244" source="pf160413304114244" outcome="exito" fromaction="#{amigosLista.aceptarAmigo(sesion.email, vamigo)}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf160413304114243" target="pf160413304114242" source="pf160413304114242" outcome="exito" fromaction="#{amigosLista.agregarAmigo(sesion.email, vusuario)}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf160433881385163" target="pf160421638022054" source="pf160421638022054" outcome="login" fromaction="#{login.registry}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf160433881385164" target="pf160421638022054" source="pf160421638022054" outcome="existente">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+</pageflow:Pageflow>

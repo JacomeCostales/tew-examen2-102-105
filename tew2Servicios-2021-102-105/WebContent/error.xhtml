@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="#{settings.locale}">
+
+<h:head>
+<title>#{msgs.tituloOperacionError}</title>
+<style>
+		body {
+		  background-color: DimGrey;
+		  font-family: Arial;
+		  font-weight: bold;
+		}
+	
+		</style>
+
+</h:head>
+<h:body>
+
+<h1 style="margin-left:10%;color: white; font-weight: 800;font-size:45px;"><i class="fa fa-fw fa-users" style="font-size: 2em;"></i>#{msgs.tituloAplicacion1}</h1>
+<br/>
+
+<br/>
+<br/>
+<p:panel style="margin-left:10%;width:75%">
+	<h1>#{msgs.mensajeError1}<i class="fa fa-fw fa-warning" style="font-size: 2em;"></i></h1>
+	<p>#{msgs.mensajeError2}</p>
+	<p>#{msgs.mensajeError3}</p>
+</p:panel>
+</h:body>
+</f:view>
+</html>

@@ -1,0 +1,64 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+    <p:growl id="growl" showDetail="true" sticky="true" />  
+	<p:panelGrid columns="2">
+
+
+		<h:panelGroup>
+			<h:outputLabel for="email" value="#{msgs.emailRegistro}" />
+		</h:panelGroup>
+		<h:panelGroup>
+			<p:inputText id="email" value="#{login.emailRegistrado}" required="true" requiredMessage="#{msgs.login_form_name_label}: #{msgs.login_form_name_required}" >
+				<f:validateRegex pattern=".+@.+\.[a-z]+" />
+			<p:message for="email" />
+			</p:inputText>
+		</h:panelGroup>
+
+
+		<h:panelGroup>
+			<h:outputLabel for="contraseña"
+				value="#{msgs.contraseñaRegistro}" />
+		</h:panelGroup>
+		<h:panelGroup>
+			<p:password id="contraseña" value="#{login.contraseñaRegistrado}" required="true" match="contraseñaRepe" requiredMessage="#{msgs.login_form_password_label}: #{msgs.login_form_password_required}" />
+			<p:message for="contraseña" />
+		</h:panelGroup>
+
+
+		<h:panelGroup>
+			<h:outputLabel for="contraseñaRepe"
+				value="#{msgs.contraseñaRepeRegistro}" />
+		</h:panelGroup>
+		<h:panelGroup>
+			<p:password id="contraseñaRepe"  required="true"
+				requiredMessage="DEBES ESCRIBIR LA CONTRASEÑA REPETIDA" />
+			<p:message for="contraseñaRepe" />
+		</h:panelGroup>
+
+
+		<h:panelGroup>
+			<h:outputLabel for="nombre"
+				value="#{msgs.nombreRegistro}" />
+		</h:panelGroup>
+		<h:panelGroup>
+			<p:inputText id="nombre" value="#{login.nombreRegistrado}" required="true" requiredMessage="#{msgs.login_form_name_label}: #{msgs.login_form_name_required}" />
+			<p:message for="nombre" />
+		</h:panelGroup>
+
+		
+	</p:panelGrid>
+	
+	<p:panelGrid columns="1">
+		<h:panelGroup>
+			<h:outputLabel for="nombre" value="#{msgs.aceptasRecopilar}" /><center>
+			<p:selectBooleanCheckbox id="cb" value="#{login.LOPDaceptada}"  required="true" >
+				<p:message for="cb" />
+			</p:selectBooleanCheckbox></center>
+		</h:panelGroup>
+	</p:panelGrid>
+</ui:composition>

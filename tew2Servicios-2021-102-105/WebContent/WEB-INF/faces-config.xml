@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<application>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+	</application>
+
+	<!-- DECLARACIÓN DE BEANS -->
+
+	<managed-bean>
+		<managed-bean-name>loginManager</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanLoginManager</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>settings</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanSettings</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>usuarios</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanUsuarios</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>publicaciones</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanPublicaciones</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>amigosLista</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanAmigosLista</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>sesion</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanSesion</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>login</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanLogin</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>admin</managed-bean-name>
+		<managed-bean-class>com.tew.presentation.BeanAdministrador</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- NAVIGATION RULES -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/error.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>CIERRASESION</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{login.logout()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>publicar</from-outcome>
+			<to-view-id>/usuarios/crearPublicacion.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>borrarUsers</from-outcome>
+			<to-view-id>/admin/borrarUsuario.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{publicaciones.listadoPropias('TITULO')}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/publicacionesPropias.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{publicaciones.listadoPropias('FECHA')}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/publicacionesPropias.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{publicaciones.listadoAmigos}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/publicacionesAmigos.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{admin.borrarUsuarios}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/admin/borrarUsuario.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{usuarios.listadoEnvios}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/enviarInvitacion.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{usuarios.listadoPeticiones}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/aceptarInvitacion.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{admin.reiniciarBD}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{publicaciones.salva}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/opcionesUsuarios.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+
+	<navigation-rule>
+		<from-view-id>/usuarios/aceptarInvitacion.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{amigosLista.aceptarAmigo(sesion.email, vamigo)}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/aceptarInvitacion.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/usuarios/enviarInvitacion.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{amigosLista.agregarAmigo(sesion.email, vusuario)}</from-action>
+			<from-outcome>exito</from-outcome>
+			<to-view-id>/usuarios/enviarInvitacion.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{login.verify}</from-action>
+			<from-outcome>successAdmin</from-outcome>
+			<to-view-id>/admin/opcionesAdmin.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{login.verify}</from-action>
+			<from-outcome>successUsuarios</from-outcome>
+			<to-view-id>/usuarios/opcionesUsuarios.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{login.verify}</from-action>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>Registro</from-outcome>
+			<to-view-id>/opcionesRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/opcionesRegistro.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{login.registry}</from-action>
+			<from-outcome>successAdmin</from-outcome>
+			<to-view-id>/admin/opcionesAdmin.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{login.registry}</from-action>
+			<from-outcome>successUsuarios</from-outcome>
+			<to-view-id>/usuarios/opcionesUsuarios.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{login.registry}</from-action>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/opcionesRegistro.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>IniciarSesion</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>existente</from-outcome>
+			<to-view-id>/opcionesRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/usuarios/*</from-view-id>
+		<navigation-case>
+			<from-outcome>casa</from-outcome>
+			<to-view-id>/usuarios/opcionesUsuarios.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/admin/*</from-view-id>
+		<navigation-case>
+			<from-outcome>casa</from-outcome>
+			<to-view-id>/admin/opcionesAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

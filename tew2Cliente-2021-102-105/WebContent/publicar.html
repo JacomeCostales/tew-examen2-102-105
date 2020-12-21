@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="jquery/Jquery-1.11.3.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/tew2Servicios-2021-102-105/rest-jsapi"></script>
+<script type="text/javascript" src="javascript/functions_publicar.js"></script>
+<link rel="stylesheet" href="bootstrap/css/estilo-vistas.css">
+<section>
+	 <article>
+		 <h3> Publicar </h3>
+		 <form id="frmPublicar" >
+			 <div class="form-group">
+				 <label for="titulo">Titulo</label>
+				 <div style="width:200px;"><input type="text" id="titulo" class="form-control" maxlength="20" size="50"/></div>
+			 </div>
+			 <div class="form-group">
+				 <label for="texto">Texto</label>
+				 <!--  <input type="text" id="texto" required class="form-control" maxlength="300"/>-->
+				 <div style="width:700px;"><textarea id="texto" required class="form-control" maxlength="300" cols="100" rows="3" style="resize:none;"></textarea></div>
+			 </div>
+			 
+			 <input type="submit" value="Salvar" id="btnSave" required class="boton" />
+			 
+		 </form>
+	 </article>
+	 
+	
+</section>

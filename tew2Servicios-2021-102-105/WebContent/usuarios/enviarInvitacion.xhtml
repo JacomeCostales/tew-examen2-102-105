@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template-usuarios.xhtml">
+
+	<ui:define name="titulo">
+    #{msgs.tituloOperacionEnviarInvitacion}
+  </ui:define>
+
+	<ui:define name="cuerpo">
+		<h:form id = "formulario" style="margin-left:10%;width:75%;">	
+		
+		#{msgs.filtroBusqueda}
+			<p:inputText id = "textoFiltro">
+			<p:ajax event="keyup" update="tablaUsuarios" listener = "#{usuarios.filtrarUsuarios(param['formulario:textoFiltro'])}" />
+			</p:inputText>
+			
+			<p:dataTable id = "tablaUsuarios" var="vusuario" value="#{usuarios.usuarios}" border="1">
+				<p:column>
+					<f:facet name="header">#{msgs.correo}</f:facet>#{vusuario.email}</p:column>
+				<p:column>
+					<f:facet name="header">#{msgs.rol}</f:facet>#{vusuario.rol}</p:column>
+				<p:column>
+					<f:facet name="header">#{msgs.nombre}</f:facet>#{vusuario.nombre}</p:column>
+				<p:column>
+					
+					<f:facet name="header">#{msgs.agregarAmigo}</f:facet>
+					<p:commandButton action="#{amigosLista.agregarAmigo(sesion.email, vusuario)}" type="submit" value="#{msgs.agregarAmigo}" immediate="true" update = "tablaUsuarios"></p:commandButton>
+					
+				</p:column>
+			</p:dataTable>
+			
+		</h:form>
+	</ui:define>
+	<ui:define name="pie">
+	</ui:define>
+</ui:composition>

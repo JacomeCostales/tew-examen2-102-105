@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template-admin.xhtml">
+
+	<ui:define name="titulo">
+    #{msgs.tituloOperacionBorrarUsuario}
+  </ui:define>
+
+	<ui:define name="cuerpo">
+		<h:form id="form">
+		<p:growl id="growl" showDetail="true" />  
+			 <p:dataTable id="tablaCB" var="vusuario" value="#{usuarios.users}" selection="#{admin.users}" rowKey="#{vusuario.email}" style="margin-bottom:0">
+			       
+			        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+			        <p:column headerText="#{msgs.correo}">
+			            <h:outputText value="#{vusuario.email}" />
+			        </p:column>
+			        <p:column headerText="#{msgs.nombre}">
+			            <h:outputText value="#{vusuario.nombre}" />
+			        </p:column>
+			        <p:column headerText="#{msgs.rol}">
+			            <h:outputText value="#{vusuario.rol}" />
+			        </p:column>
+			        
+			        <f:facet name="footer">
+			            <p:commandButton value="#{msgs.botonBorrar}" action="#{admin.borrarUsuarios}"  actionListener="#{usuarios.listado}" update="@form" inmediate="true">
+			             
+			             </p:commandButton>
+			        </f:facet>
+    		</p:dataTable>
+		</h:form>
+	</ui:define>
+	<ui:define name="pie">
+	<ui:include src="/snippets/pie-casa.xhtml" />
+	</ui:define>
+</ui:composition>

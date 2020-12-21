@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template-usuarios.xhtml">
+
+	<ui:define name="titulo">
+   #{msgs.tituloOperacionPublicacionesAmigos}
+  </ui:define>
+
+	<ui:define name="cuerpo">
+		<h:form>
+				
+			
+			<div style="width:75%;">
+				<ui:repeat var="vpubli" value="#{publicaciones.publicaciones}" >
+					<p:panel id="panelAlumnos" header="#{vpubli.email}" footer="#{vpubli.fecha_format}" style="margin-left:35%;margin-bottom:10px;">
+						<h:panelGrid columns="2" cellpadding="10" style="margin-bottom:10px;">
+							<h:outputText value="#{vpubli.titulo}" />
+							<h:outputText value="#{vpubli.texto}" />
+						</h:panelGrid>
+					</p:panel>
+				</ui:repeat>
+			</div>
+			
+			
+		</h:form>
+	</ui:define>
+	<ui:define name="pie">
+	<ui:include src="/snippets/pie-casa.xhtml" />
+	</ui:define>
+</ui:composition>

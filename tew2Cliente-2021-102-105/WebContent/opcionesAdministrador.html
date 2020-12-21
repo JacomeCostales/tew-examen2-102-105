@@ -1,0 +1,99 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Opciones Administrador</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<script type="text/javascript" src="http://localhost:8080/tew2Servicios-2021-102-105/rest-jsapi"></script>
+<script type="text/javascript" src="javascript/functions_login.js"></script>
+</head>
+<body onload="if(sessionStorage.getItem('token')!=null && sessionStorage.getItem('usuario')!=null){}else{alert('Usted no se ha autenticado');window.location.href='index.html';}">
+<div class="container">
+		<!-- 
+	***************************************************
+	* CABECERA DE LA PAGINA ***************************
+	***************************************************
+	-->
+		<div class="page-header">
+			<h1 style="font-weight:900;color:white;"><i class="fa fa-fw fa-users" style="font-size: 2em;"></i> RED SOCIAL</h1></div>
+			<!-- 
+		***************************************************
+		* MENU CON ANIMACIONES **********************************
+		***************************************************
+		-->
+		<div class="row" style="height:15%">
+			<ul class="col" style="margin: 0 25%;">
+				<li style="margin: 0 7%;"><a href="borrarUsuarios.html" target="formulario"><i class="fa fa-ban" aria-hidden="true"></i></a></li>
+				<li style="margin: 0 7%;"><a href="index.html" id="botonReinicio"><i class="fa fa-spinner" aria-hidden="true"></i></a></li>
+				<li style="margin: 0 7%;"><a href="index.html" id="botonLogout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+		
+		
+			<!-- 
+	***************************************************
+	* SECCION PRINCIPAL DE FORMULARIOS EXTERNOS********
+	***************************************************
+	-->
+	<div class="row" style="height:60%">
+			<div class="col-md-9" style="position:relative;width:100%;height:100%;">
+				<div style="border-radius: 30px;overflow: hidden;"><iframe name="formulario" src="" frameBorder="0" style="position:relative;width:100%;height:95%;"></iframe></div>
+			</div>
+
+
+			<!-- 
+	***************************************************
+	* ELEMENTO LATERAL INFORMATIVO ********************
+	***************************************************
+	-->
+			<div class="col-md-3" style="position:relative;width:70%;height:95%;background-color:white;border-radius: 30px;padding: 10% 1%;">
+				<aside>
+					<header>
+						<h2 style="font-weight:800">Administrador</h2>
+					</header>
+					<p>Funciones
+					<ol>
+						<li>Autenticación</li>
+						<li>Logout</li>
+						<li>Borrado de usuarios de la red social</li>
+						<li>Reinicio de la base de datos</li>
+					</ol>
+				</aside>
+			</div>
+		</div>
+
+		<!-- 
+	***************************************************
+	* ELEMENTO PIE DE NAVEGACION** ********************
+	***************************************************
+	-->
+	
+		<div class="panel panel-default bordeado">
+			<div class="panel-footer bordeado">
+				<nav>
+					<i class="fa fa-info-circle" aria-hidden="true"></i>
+					<a href="http://localhost:8080/tew2Servicios-2021-102-105/redsocial.json" target="_blank">JSON con DATOS INICIALES</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

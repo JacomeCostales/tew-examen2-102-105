@@ -1,0 +1,94 @@
+h3
+{
+	font-weight: 700;
+	text-align:center; 
+}
+
+section
+{
+	padding:0 0 0 30px;
+}
+
+.botonAceptarAmigo
+{
+  border-radius: 10px ;
+  background-color: #03fcab;
+  width:95%; 
+}
+
+.botonAgregarAmigo
+{
+  border-radius: 10px ;
+  background-color: #03fcab;
+  width:95%; 
+}
+
+.boton
+{
+  border-radius: 10px ;
+  background-color: #03fcab;
+  
+}
+
+.cercano
+{
+  margin: 2em;
+  margin-left: 1em;
+}
+
+.centrado
+{
+  margin: 2em;
+  margin-left: 4em;
+  margin-right: 0em;
+  margin-bottom: 0em;
+}
+
+.filtro
+{
+  border-radius: 15px ;
+  background-color: lightgrey;
+  width:50%;
+}
+
+.Tabla
+{
+  margin-left: 4em;
+  background-color: #03fcab;
+  width:75%;
+  
+}
+
+.filaTabla
+{
+  background-color: white;
+  width:65%; 
+}
+.publicacion 
+{
+  border-radius: 10px ;
+  background-color: #03fcab;
+  width:95%; 
+}
+.titulo-publicacion
+{
+  text-align: left;
+  padding: 10px 0 0 20px;
+}
+.contenido-publicacion 
+{
+  text-align: left;
+  padding: 0 0 0 20px;
+}
+.fecha-publicacion 
+{
+  text-align: right;
+  padding: 0 20px 10px 0;
+}
+
+.usuarioBorrar
+{
+	width:200px;
+	text-align:center;
+	padding: 10px;
+}

@@ -1,0 +1,333 @@
+{"usuarios": [
+  {
+    "email": "user1@dominio.com",
+    "passwd": "user1",
+    "rol": "usuario",
+    "nombre": "user1"
+  },
+  {
+    "email": "user2@dominio.com",
+    "passwd": "user2",
+    "rol": "usuario",
+    "nombre": "user2"
+  },
+  {
+    "email": "user3@dominio.com",
+    "passwd": "user3",
+    "rol": "usuario",
+    "nombre": "user3"
+  },
+  {
+    "email": "user4@dominio.com",
+    "passwd": "user4",
+    "rol": "usuario",
+    "nombre": "user4"
+  },
+  {
+    "email": "user5@dominio.com",
+    "passwd": "user5",
+    "rol": "usuario",
+    "nombre": "user5"
+  },
+  {
+    "email": "user6@dominio.com",
+    "passwd": "user6",
+    "rol": "usuario",
+    "nombre": "user6"
+  },
+  {
+    "email": "user7@dominio.com",
+    "passwd": "user7",
+    "rol": "usuario",
+    "nombre": "user7"
+  },
+  {
+    "email": "user8@dominio.com",
+    "passwd": "user8",
+    "rol": "usuario",
+    "nombre": "user8"
+  },
+  {
+    "email": "user9@dominio.com",
+    "passwd": "user9",
+    "rol": "usuario",
+    "nombre": "user9"
+  }
+  ],
+  "publicaciones": [
+  {
+    "email": "user1@dominio.com",
+    "titulo": "Publicacion 1 user 1",
+    "texto": "Texto publicacion 1 user1",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user1@dominio.com",
+    "titulo": "Publicacion 2 user 1",
+    "texto": "Texto publicacion 2 user1",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user1@dominio.com",
+    "titulo": "Publicacion 3 user 1",
+    "texto": "Texto publicacion 3 user1",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user2@dominio.com",
+    "titulo": "Publicacion 1 user 2",
+    "texto": "Texto publicacion 1 user2",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user2@dominio.com",
+    "titulo": "Publicacion 2 user 2",
+    "texto": "Texto publicacion 2 user 2",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user2@dominio.com",
+    "titulo": "Publicacion 3 user 2",
+    "texto": "Texto publicacion 3 user 2",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user3@dominio.com",
+    "titulo": "Publicacion 1 user 3",
+    "texto": "Texto publicacion 1 user 3",
+    "fecha": "1542116773"
+  },
+  {
+    "email": "user3@dominio.com",
+    "titulo": "Publicacion 2 user 3",
+    "texto": "Texto publicacion 2 user 3",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user3@dominio.com",
+    "titulo": "Publicacion 3 user 3",
+    "texto": "Texto publicacion 3 user 3",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user4@dominio.com",
+    "titulo": "Publicacion 1 user 4",
+    "texto": "Texto publicacion 1 user 4",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user4@dominio.com",
+    "titulo": "Publicacion 2 user 4",
+    "texto": "Texto publicacion 2 user 4",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user4@dominio.com",
+    "titulo": "Publicacion 3 user 4",
+    "texto": "Texto publicacion 3 user 4",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user5@dominio.com",
+    "titulo": "Publicacion 1 user 5",
+    "texto": "Texto publicacion 1 user 5",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user5@dominio.com",
+    "titulo": "Publicacion 2 user 5",
+    "texto": "Texto publicacion 2 user 5",
+    "fecha": "1542116773"
+  },
+    {
+    "email": "user5@dominio.com",
+    "titulo": "Publicacion 3 user 5",
+    "texto": "Texto publicacion 3 user 5",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user6@dominio.com",
+    "titulo": "Publicacion 1 user 6",
+    "texto": "Texto publicacion 1 user 6",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user6@dominio.com",
+    "titulo": "Publicacion 2 user 6",
+    "texto": "Texto publicacion 2 user 6",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user6@dominio.com",
+    "titulo": "Publicacion 3 user 6",
+    "texto": "Texto publicacion 3 user 6",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user7@dominio.com",
+    "titulo": "Publicacion 1 user 7",
+    "texto": "Texto publicacion 1 user 7",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user7@dominio.com",
+    "titulo": "Publicacion 2 user 7",
+    "texto": "Texto publicacion 2 user 7",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user7@dominio.com",
+    "titulo": "Publicacion 3 user 7",
+    "texto": "Texto publicacion 3 user 7",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user8@dominio.com",
+    "titulo": "Publicacion 1 user 8",
+    "texto": "Texto publicacion 1 user 8",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user8@dominio.com",
+    "titulo": "Publicacion 2 user 8",
+    "texto": "Texto publicacion 2 user 8",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user8@dominio.com",
+    "titulo": "Publicacion 3 user 8",
+    "texto": "Texto publicacion 3 user 8",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user9@dominio.com",
+    "titulo": "Publicacion 1 user 9",
+    "texto": "Texto publicacion 1 user 9",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user9@dominio.com",
+    "titulo": "Publicacion 2 user 9",
+    "texto": "Texto publicacion 2 user 9",
+    "fecha": "1542116773"
+  },
+      {
+    "email": "user9@dominio.com",
+    "titulo": "Publicacion 3 user 9",
+    "texto": "Texto publicacion 3 user 9",
+    "fecha": "1542116773"
+  }
+  ],
+ "amigos":  
+ [
+  {
+    "emailusuario": "user1@dominio.com",
+    "emailamigo": "user2@dominio.com"
+  },
+  {
+    "emailusuario": "user1@dominio.com",
+    "emailamigo": "user3@dominio.com"
+  },
+  {
+    "emailusuario": "user1@dominio.com",
+    "emailamigo": "user4@dominio.com"
+  },
+  {
+    "emailusuario": "user2@dominio.com",
+    "emailamigo": "user3@dominio.com"
+  },
+  {
+    "emailusuario": "user2@dominio.com",
+    "emailamigo": "user4@dominio.com"
+  },
+  {
+    "emailusuario": "user2@dominio.com",
+    "emailamigo": "user5@dominio.com"
+  },
+  {
+    "emailusuario": "user3@dominio.com",
+    "emailamigo": "user4@dominio.com"
+  },
+  {
+    "emailusuario": "user3@dominio.com",
+    "emailamigo": "user5@dominio.com"
+  },
+    {
+    "emailusuario": "user3@dominio.com",
+    "emailamigo": "user6@dominio.com"
+  },
+    {
+    "emailusuario": "user4@dominio.com",
+    "emailamigo": "user5@dominio.com"
+  },
+    {
+    "emailusuario": "user4@dominio.com",
+    "emailamigo": "user6@dominio.com"
+  },
+    {
+    "emailusuario": "user4@dominio.com",
+    "emailamigo": "user7@dominio.com"
+  },
+    {
+    "emailusuario": "user5@dominio.com",
+    "emailamigo": "user6@dominio.com"
+  },
+    {
+    "emailusuario": "user5@dominio.com",
+    "emailamigo": "user7@dominio.com"
+  },
+    {
+    "emailusuario": "user5@dominio.com",
+    "emailamigo": "user8@dominio.com"
+  },
+      {
+    "emailusuario": "user6@dominio.com",
+    "emailamigo": "user7@dominio.com"
+  },
+      {
+    "emailusuario": "user6@dominio.com",
+    "emailamigo": "user8@dominio.com"
+  },
+      {
+    "emailusuario": "user6@dominio.com",
+    "emailamigo": "user9@dominio.com"
+  },
+      {
+    "emailusuario": "user7@dominio.com",
+    "emailamigo": "user1@dominio.com"
+  },
+      {
+    "emailusuario": "user7@dominio.com",
+    "emailamigo": "user2@dominio.com"
+  },
+      {
+    "emailusuario": "user7@dominio.com",
+    "emailamigo": "user3@dominio.com"
+  },
+      {
+    "emailusuario": "user8@dominio.com",
+    "emailamigo": "user1@dominio.com"
+  },
+      {
+    "emailusuario": "user8@dominio.com",
+    "emailamigo": "user2@dominio.com"
+  },
+      {
+    "emailusuario": "user8@dominio.com",
+    "emailamigo": "user3@dominio.com"
+  },
+      {
+    "emailusuario": "user9@dominio.com",
+    "emailamigo": "user1@dominio.com"
+  },
+      {
+    "emailusuario": "user9@dominio.com",
+    "emailamigo": "user2@dominio.com"
+  },
+      {
+    "emailusuario": "user9@dominio.com",
+    "emailamigo": "user3@dominio.com"
+  }
+ ] 
+ }
+  
