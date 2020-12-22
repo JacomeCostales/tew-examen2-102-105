@@ -22,8 +22,9 @@ public interface AmigosServicesRs extends AmigosListaService
 	 
 	 
 	 @DELETE
-	 @Path("deleteAmigos/{a}/{b}/{N}/{T}")
-	 void deleteAmigos(@PathParam("a") String a, @PathParam("b") String b, @PathParam("N") String N, @PathParam("T") String T) throws EntityNotFoundException;
+	 @Path("deleteAmigos/{N}/{T}")
+	 @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	 void deleteAmigos(Amigos amigos, @PathParam("N") String N, @PathParam("T") String T) throws EntityNotFoundException;
 	 
 	 @PUT
 	 @Path("saveAmigos/{N}/{T}")

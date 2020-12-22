@@ -72,7 +72,7 @@ function View()
 		 for ( var i in lista) 
 		 {
 			 var usuario = lista[i];
-			 $("#tablaUsuarios tbody").append("<tr>"+ "<td class='filaTabla'>" + usuario.email_usuario + "</td>"  + "<td class='filaTabla'>" + usuario.email_amigo + "</td>"  + "<td class='filaTabla'>" + "<input type='button' value='Agregar Amigo' class='botonAgregarAmigo'/>" + "</td>"  + "</tr>");
+			 $("#tablaUsuarios tbody").append("<tr>"+ "<td class='filaTabla'>" + usuario.email_usuario + "</td>"  + "<td class='filaTabla'>" + usuario.email_amigo + "</td>"  + "<td class='filaTabla'>" + "<input type='button' value='Eliminar Amistad' class='botonAgregarAmigo'/>" + "</td>"  + "</tr>");
 		 }
 	 } 
 };

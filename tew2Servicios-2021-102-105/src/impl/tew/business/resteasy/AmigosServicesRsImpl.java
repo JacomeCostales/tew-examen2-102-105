@@ -55,12 +55,12 @@ public class AmigosServicesRsImpl implements AmigosServicesRs
 	}
 
 	@Override
-	public void deleteAmigos(String a, String b,String N, String T) throws EntityNotFoundException
+	public void deleteAmigos(Amigos a,String N, String T) throws EntityNotFoundException
 	{
 		if(AlmacenServidor.getAlmacen().autentica(N,T))
 		{
-			Amigos amigos = new Amigos(a,b,true);
-			new AmigosListaBaja().delete(amigos);
+			
+			new AmigosListaBaja().delete(a);
 		}
 		else
 		{
