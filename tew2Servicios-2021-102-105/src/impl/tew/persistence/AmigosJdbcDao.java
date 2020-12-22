@@ -73,10 +73,12 @@ public class AmigosJdbcDao implements AmigosDao {
 			// Obtenemos la conexi��n a la base de datos.
 			Class.forName(SQL_DRV);
 			con = DriverManager.getConnection(SQL_URL, "sa", "");
-			ps = con.prepareStatement("delete from Amigos where email_usuario = ? and email_amigo = ?");
+			ps = con.prepareStatement("delete from Amigos where ((email_usuario = ? and email_amigo = ?) or (email_usuario = ? and email_amigo = ?)) and aceptada = true");
 			
 			ps.setString(1, a.getEmail_usuario());
 			ps.setString(2, a.getEmail_amigo());
+			ps.setString(3, a.getEmail_amigo());
+			ps.setString(4, a.getEmail_usuario());
 
 			rows = ps.executeUpdate();
 			if (rows != 1) {
@@ -248,6 +250,57 @@ public class AmigosJdbcDao implements AmigosDao {
 			ps = con.prepareStatement("select * from Amigos where email_amigo = ? and aceptada = ?");
 			ps.setString(1, email);
 			ps.setBoolean(2, false);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Amigos amigos = new Amigos();
+				amigos.setEmail_usuario(rs.getString("email_usuario"));
+				amigos.setEmail_amigo(rs.getString("email_amigo"));
+				amigos.setAceptada(rs.getBoolean("aceptada"));
+				
+				amigosLista.add(amigos);
+
+			}
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			throw new PersistenceException("Driver not found", e);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenceException("Invalid SQL or database schema", e);
+		} finally  {
+			if (rs != null) {try{ rs.close(); } catch (Exception ex){}};
+			if (ps != null) {try{ ps.close(); } catch (Exception ex){}};
+			if (con != null) {try{ con.close(); } catch (Exception ex){}};
+		}
+		
+		return amigosLista;
+	}
+	
+	
+	@Override
+	public List<Amigos> getAmigosAceptados(String email) 
+	{
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Connection con = null;
+		
+		List<Amigos> amigosLista = new ArrayList<Amigos>();
+
+		try {
+			// En una implemenntaci��n m��s sofisticada estas constantes habr��a 
+			// que sacarlas a un sistema de configuraci��n: 
+			// xml, properties, descriptores de despliege, etc 
+			String SQL_DRV = "org.hsqldb.jdbcDriver";
+			String SQL_URL = "jdbc:hsqldb:hsql://localhost/localDB";
+
+			// Obtenemos la conexi��n a la base de datos.
+			Class.forName(SQL_DRV);
+			con = DriverManager.getConnection(SQL_URL, "sa", "");
+			ps = con.prepareStatement("select * from Amigos where (email_usuario = ? or email_amigo = ?) and aceptada = ?");
+			ps.setString(1, email);
+			ps.setString(2, email);
+			ps.setBoolean(3, true);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {

@@ -109,6 +109,19 @@ public class AmigosServicesRsImpl implements AmigosServicesRs
 	}
 
 	@Override
+	public List<Amigos> getListadoAmigos(String email, String N, String T) {
+		if(AlmacenServidor.getAlmacen().autentica(N,T))
+		{
+			return new AmigosListaListado().getAmigosListaPeticiones(email);
+		}
+		else
+		{
+			System.out.println("Este usuario no se ha autenticado");
+			return null;
+		}
+	}
+	
+	@Override
 	public Amigos find(Amigos a) throws EntityNotFoundException 
 	{
 		return null;
@@ -143,5 +156,7 @@ public class AmigosServicesRsImpl implements AmigosServicesRs
 	{
 		return null;
 	}
+
+	
 
 }

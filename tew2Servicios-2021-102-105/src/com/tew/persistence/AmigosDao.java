@@ -13,5 +13,6 @@ public interface AmigosDao {
 	void delete(Amigos a) throws NotPersistedException;
 	Amigos find(Amigos a);
 	List<Amigos> getAmigosPeticiones(String email);
+	List<Amigos> getAmigosAceptados(String email);
 
 }

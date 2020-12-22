@@ -20,4 +20,11 @@ public class AmigosListaListado {
 		AmigosDao dao = Factories.persistence.createAmigosDao();
 		return  dao.getAmigosPeticiones(email);
 	}
+	
+	public List<Amigos> getAmigosAceptados(String email) 
+	{
+		AmigosDao dao = Factories.persistence.createAmigosDao();
+		return  dao.getAmigosAceptados(email);
+	}
+	
 }

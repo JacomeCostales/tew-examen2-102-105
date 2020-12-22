@@ -40,4 +40,11 @@ public interface AmigosServicesRs extends AmigosListaService
 	 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	 public List<Amigos> getListadoPeticiones(@PathParam("email")String email ,@PathParam("N") String N, @PathParam("T") String T);
 	 
+	 @GET
+	 @Path("getListadoAmigos/{email}/{N}/{T}")
+	 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	 public List<Amigos> getListadoAmigos(@PathParam("email")String email ,@PathParam("N") String N, @PathParam("T") String T);
+	 
+	 
+	 
 }
