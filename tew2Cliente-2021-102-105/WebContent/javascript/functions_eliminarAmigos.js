@@ -24,7 +24,7 @@ function Model()
 		 console.log(emailUsuario);
 		 var email = sessionStorage.getItem("usuario");
 		 var token = sessionStorage.getItem("token");
-		 this.tablaUsuarios = AmigosServicesRS.getListadoAmigos({email : emailUsuario, N : email, T : token, $contentType : "application/json"});	 
+		 this.tablaUsuarios = AmigosServicesRs.getListadoAmigos({email : emailUsuario, N : email, T : token, $contentType : "application/json"});	 
 	 }
 	 
 	this.createAmigo = function(emailUsuario, emailAmigo) 
@@ -51,8 +51,17 @@ function View()
 	
 	this.obtenerEmailAmigo = function(celda) 
 	{
-		var emailAmigo = String(celda.closest('tr').find('td').get(0).innerHTML);
-		return emailAmigo;
+		var emailUsuario = String(celda.closest('tr').find('td').get(0).innerHTML);
+		var emailAmigo = String(celda.closest('tr').find('td').get(1).innerHTML);
+		
+		var amigo = 
+		{
+				email_usuario : emailUsuario,
+				email_amigo : emailAmigo,
+				aceptada : true
+		};
+	    return amigo;
+		
 	}
 	
 	 this.list = function (lista) 
@@ -80,8 +89,7 @@ function Controller(varmodel, varview)
 		 
 		 $("#tablaUsuarios").on("click", ".botonAgregarAmigo", function(event) 
 		    {
-				var emailAmigo = that.view.obtenerEmailAmigo($(this));
-				var amigos = that.model.createAmigo(sessionStorage.getItem('usuario'), emailAmigo);
+				var amigos = that.view.obtenerEmailAmigo($(this));
 				that.model.eliminarAmigo(amigos);
 				that.model.load(sessionStorage.getItem('usuario')); 
 				that.view.list(that.model.tablaUsuarios);

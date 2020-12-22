@@ -112,7 +112,7 @@ public class AmigosServicesRsImpl implements AmigosServicesRs
 	public List<Amigos> getListadoAmigos(String email, String N, String T) {
 		if(AlmacenServidor.getAlmacen().autentica(N,T))
 		{
-			return new AmigosListaListado().getAmigosListaPeticiones(email);
+			return new AmigosListaListado().getAmigosAceptados(email);
 		}
 		else
 		{

@@ -308,7 +308,7 @@ public class AmigosJdbcDao implements AmigosDao {
 				amigos.setEmail_usuario(rs.getString("email_usuario"));
 				amigos.setEmail_amigo(rs.getString("email_amigo"));
 				amigos.setAceptada(rs.getBoolean("aceptada"));
-				
+				System.out.println("Amigo: "+amigos.getEmail_usuario());
 				amigosLista.add(amigos);
 
 			}
